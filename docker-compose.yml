@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  security-audit:
+    build: .
+    container_name: security-audit-cli
+    volumes:
+      - ./reports:/app/reports
+    environment:
+      - AUDIT_TIMEOUT=5
+      - AUDIT_VERBOSE=false
